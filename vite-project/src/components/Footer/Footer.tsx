@@ -175,28 +175,28 @@ export const Footer = () => {
           <div className="flex flex-col items-start md:items-end gap-10">
             <nav className="flex flex-col md:flex-row justify-start md:justify-end gap-8 md:gap-12 w-full">
               <a
-                href="/#projects"
+                href="/"
+                className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="/projects"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
               >
                 Projects
               </a>
               <a
-                href="/#gallery"
+                href="/gallery"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
               >
                 Gallery
               </a>
               <a
-                href="/#about"
+                href="/about"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
               >
                 About
-              </a>
-              <a
-                href="/#connect"
-                className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-              >
-                Connect
               </a>
             </nav>
 

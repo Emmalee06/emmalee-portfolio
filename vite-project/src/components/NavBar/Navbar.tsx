@@ -8,10 +8,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "/#home", isActive: true },
-  { label: "Projects", href: "/#projects", isActive: false },
-  { label: "Gallery", href: "/#gallery", isActive: false },
-  { label: "About", href: "/#about", isActive: false },
+  { label: "Home", href: "/", isActive: true },
+  { label: "Projects", href: "/projects", isActive: false },
+  { label: "Gallery", href: "/gallery", isActive: false },
+  { label: "About", href: "/about", isActive: false },
 ];
 
 export const Navbar = () => {
