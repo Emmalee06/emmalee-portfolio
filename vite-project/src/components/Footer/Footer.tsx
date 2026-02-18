@@ -101,7 +101,7 @@ export const Footer = () => {
           ctx.save();
           ctx.translate(newX, newY);
           ctx.rotate((petal.rotation * Math.PI) / 180);
-          ctx.fillStyle = "rgba(236, 72, 153, 0.3)";
+          ctx.fillStyle = "rgba(196, 181, 253, 0.35)";
           ctx.beginPath();
           ctx.arc(0, 0, petal.size / 2, 0, Math.PI * 2);
           ctx.fill();
@@ -136,7 +136,7 @@ export const Footer = () => {
       />
 
       <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="space-y-6">
             <img src="/logo_footer.png" alt="ED Logo" className="h-12 w-auto" />
 
@@ -172,41 +172,43 @@ export const Footer = () => {
             </div>
           </div>
 
-          <nav className="flex flex-col md:flex-row justify-end gap-8 md:gap-12">
-            <a
-              href="#projects"
-              className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-            >
-              Projects
-            </a>
-            <a
-              href="#gallery"
-              className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-            >
-              Gallery
-            </a>
-            <a
-              href="#about"
-              className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#connect"
-              className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-            >
-              Connect
-            </a>
-          </nav>
-        </div>
+          <div className="flex flex-col items-start md:items-end gap-10">
+            <nav className="flex flex-col md:flex-row justify-start md:justify-end gap-8 md:gap-12 w-full">
+              <a
+                href="/#projects"
+                className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
+              >
+                Projects
+              </a>
+              <a
+                href="/#gallery"
+                className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
+              >
+                Gallery
+              </a>
+              <a
+                href="/#about"
+                className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="/#connect"
+                className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
+              >
+                Connect
+              </a>
+            </nav>
 
-        <div className="text-center space-y-1 pt-12 border-t border-purple-300/50">
-          <p className="text-gray-700 text-sm">
-            Coded & Designed by © Emmalee Dhaliwal, 2026
-          </p>
-          <p className="text-gray-700 text-sm">
-            May your trials end in full bloom &lt;3
-          </p>
+            <div className="space-y-1 text-left md:text-right w-full">
+              <p className="text-gray-700 text-sm">
+                Coded & Designed by © Emmalee Dhaliwal, 2026
+              </p>
+              <p className="text-gray-700 text-sm">
+                May your trials end in full bloom &lt;3
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

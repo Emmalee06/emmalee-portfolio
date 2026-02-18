@@ -43,7 +43,7 @@ export const FallingPetals = () => {
             transform: `scale(${petal.size}) rotate(${petal.rotation}deg)`,
           }}
         >
-          <div className="w-8 h-8 bg-pink-300/40 rounded-full blur-sm" />
+          <div className="w-8 h-8 bg-purple-300/40 rounded-full blur-sm" />
         </div>
       ))}
     </div>

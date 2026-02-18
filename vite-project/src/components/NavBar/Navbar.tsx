@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 interface NavItem {
   label: string;
@@ -7,20 +8,23 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "#home", isActive: true },
-  { label: "Projects", href: "#projects", isActive: false },
-  { label: "Gallery", href: "#gallery", isActive: false },
-  { label: "About", href: "#about", isActive: false },
+  { label: "Home", href: "/#home", isActive: true },
+  { label: "Projects", href: "/#projects", isActive: false },
+  { label: "Gallery", href: "/#gallery", isActive: false },
+  { label: "About", href: "/#about", isActive: false },
 ];
 
 export const Navbar = () => {
   const [activeItem, setActiveItem] = useState("Home");
+  const location = useLocation();
 
   return (
     <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
       <div className="relative bg-white/30 backdrop-blur-md rounded-full shadow-lg border border-white/40 px-8 py-4">
         <div className="flex items-center justify-between">
-          <img src="/logo_navbar.png" alt="ED Logo" className="h-8 w-auto" />
+          <Link to="/" aria-label="Go to home">
+            <img src="/logo_navbar.png" alt="ED Logo" className="h-8 w-auto" />
+          </Link>
 
           <ul className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
@@ -29,7 +33,8 @@ export const Navbar = () => {
                   href={item.href}
                   onClick={() => setActiveItem(item.label)}
                   className={`text-lg font-medium transition-all ${
-                    activeItem === item.label
+                    (location.pathname === "/" && activeItem === item.label) ||
+                    (location.pathname !== "/" && item.label === "Home")
                       ? "bg-gradient-to-r from-[#6C42A8] to-[#B54CB5] bg-clip-text text-transparent font-bold"
                       : "text-gray-800 hover:text-purple-600"
                   }`}

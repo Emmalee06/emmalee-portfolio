@@ -1,6 +1,9 @@
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-32 pb-20">
+    <section
+      id="home"
+      className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center px-4 pt-32 pb-10"
+    >
       <div className="text-center space-y-8 max-w-4xl">
         <h1 className="text-4xl md:text-5xl font-light text-gray-800">
           Hi, I'm Emmalee!

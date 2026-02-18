@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface Tag {
   label: string;
@@ -11,6 +12,7 @@ interface ProjectCardProps {
   image: string;
   layout: "left" | "right";
   colorScheme: "purple" | "pink" | "blue";
+  to?: string;
 }
 
 const colorSchemes = {
@@ -38,6 +40,7 @@ export const ProjectCard = ({
   image,
   layout,
   colorScheme,
+  to,
 }: ProjectCardProps) => {
   const colors = colorSchemes[colorScheme];
 
@@ -69,20 +72,45 @@ export const ProjectCard = ({
           </p>
         </div>
 
-        <button className="flex items-center gap-2 text-gray-900 font-medium text-lg group/btn">
-          <span>View More</span>
-          <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
-        </button>
+        {to ? (
+          <Link
+            to={to}
+            className="flex items-center gap-2 text-gray-900 font-medium text-lg group/btn w-fit"
+            aria-label={`View ${title}`}
+          >
+            <span>View More</span>
+            <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
+          </Link>
+        ) : (
+          <button className="flex items-center gap-2 text-gray-900 font-medium text-lg group/btn">
+            <span>View More</span>
+            <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
+          </button>
+        )}
       </div>
 
       <div
         className={`w-full lg:w-3/5 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl overflow-hidden shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex items-center justify-center min-h-[500px]`}
       >
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
-        />
+        {to ? (
+          <Link
+            to={to}
+            className="w-full h-full flex items-center justify-center"
+            aria-label={`Open ${title}`}
+          >
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+            />
+          </Link>
+        ) : (
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+          />
+        )}
       </div>
     </div>
   );

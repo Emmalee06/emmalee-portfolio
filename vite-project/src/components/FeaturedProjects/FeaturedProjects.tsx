@@ -18,6 +18,7 @@ const projects = [
     image: "/can_project_cover.png",
     layout: "right" as const,
     colorScheme: "blue" as const,
+    to: "/projects/starlight-soda",
   },
   {
     title: "Menu Design",
@@ -32,7 +33,7 @@ const projects = [
 
 export const FeaturedProjects = () => {
   return (
-    <section className="relative py-20 px-4">
+    <section id="projects" className="relative pt-12 pb-20 px-4">
       <h2 className="text-4xl md:text-5xl font-light text-gray-900 text-center mb-16">
         Featured Projects
       </h2>
