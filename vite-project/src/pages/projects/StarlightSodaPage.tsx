@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { ReactNode } from "react";
 
 const InfoPill = ({
@@ -20,6 +21,10 @@ const InfoPill = ({
 };
 
 export const StarlightSodaPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="relative z-10">
             <section className="pt-32 pb-10 px-4">
@@ -30,9 +35,9 @@ export const StarlightSodaPage = () => {
 
                     <div className="mt-8 rounded-3xl border border-white/50 bg-white/25 backdrop-blur-md shadow-2xl shadow-purple-200/50 overflow-hidden">
                         <img
-                            src="/starlight/can_header_project.png"
+                            src="/starlight/header_can_use.png"
                             alt="Starlight Soda can designs"
-                            className="w-full h-[240px] sm:h-[320px] md:h-[380px] object-contain bg-white/10"
+                            className="w-full h-[240px] sm:h-[320px] md:h-[380px] object-cover bg-white/10"
                         />
                     </div>
                 </div>
@@ -52,7 +57,7 @@ export const StarlightSodaPage = () => {
                         </p>
                     </div>
 
-                    <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5">
+                    <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5">
                         <InfoPill label="Software">
                             <ul className="mt-2 list-disc pl-5 space-y-1 text-gray-900">
                                 <li>Adobe Photoshop</li>
