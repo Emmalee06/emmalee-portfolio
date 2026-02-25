@@ -33,11 +33,13 @@ export const ProjectCard = ({
 
   return (
     <div
-      className={`group flex flex-col ${layout === "right" ? "lg:flex-row-reverse" : "lg:flex-row"} items-stretch gap-8 w-full max-w-6xl mx-auto mb-12 px-4`}
+      className={`group w-full max-w-6xl mx-auto mb-8 px-2`}
     >
-      <div
-        className={`w-full lg:w-2/5 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl p-8 shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex flex-col justify-between relative`}
-      >
+      <div className={`flex flex-col ${layout === "right" ? "lg:flex-row-reverse" : "lg:flex-row"} items-stretch gap-8 w-full min-h-[180px] lg:min-h-[180px]`}>
+        {/* Text Container - wider */}
+        <div
+          className={`w-full lg:w-2/5 flex-none ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl p-4 shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex flex-col justify-between relative`}
+        >
         <div>
           <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
             {title}
@@ -81,9 +83,10 @@ export const ProjectCard = ({
         )}
       </div>
 
-      <div
-        className={`w-full lg:w-3/5 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl overflow-hidden shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex items-center justify-center min-h-[500px] relative`}
-      >
+        {/* Image Container - narrower */}
+        <div
+          className={`w-full lg:w-3/5 flex-1 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl overflow-hidden shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex items-center justify-center relative`}
+        >
         {to ? (
           <Link
             to={to}
@@ -93,14 +96,32 @@ export const ProjectCard = ({
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 cursor-pointer"
+              className={`object-contain transition-transform duration-300 group-hover:scale-105 cursor-pointer ${
+                title === "SafeSpace"
+                  ? "h-full w-auto mb-0"
+                  : title === "Can Design"
+                  ? "h-full w-auto mb-0"
+                  : title === "Menu Design"
+                  ? "h-full w-auto mb-0"
+                  : "max-h-[180px] max-w-[80%]"
+              }`}
+              style={title === "SafeSpace" ? { alignSelf: "flex-end" } : {}}
             />
           </Link>
         ) : (
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+            className={`object-contain transition-transform duration-300 group-hover:scale-105 ${
+              title === "SafeSpace"
+                ? "h-full w-auto mb-0"
+                : title === "Can Design"
+                ? "h-full w-auto mb-0"
+                : title === "Menu Design"
+                ? "h-full w-auto mb-0"
+                : "max-h-[180px] max-w-[80%]"
+            }`}
+            style={title === "SafeSpace" ? { alignSelf: "flex-end" } : {}}
           />
         )}
         {isComingSoon && (
@@ -108,6 +129,7 @@ export const ProjectCard = ({
             <span className="text-white text-lg font-semibold">Coming soon!</span>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

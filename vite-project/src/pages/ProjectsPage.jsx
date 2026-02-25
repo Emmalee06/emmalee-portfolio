@@ -39,8 +39,7 @@ const allProjects = [
     title: "TWICE Posters",
     tags: ["Case Study", "Marketing", "UI/UX"],
     tagValues: ["case-study", "marketing", "ui-ux"],
-    description:
-      "TWICE Posters is a collection of promotional materials designed to help women and gender-diverse people foster safer, and more inclusive worksites.",
+    description: "TWICE Posters is a collection of promotional materials...",
     image: "/twice_project_cover.png",
   },
 ];
@@ -57,7 +56,8 @@ const ProjectGridCard = ({ project }) => {
   const isContainImage =
     project.title === "Can Design" || project.title === "Menu Design";
 
-  const isComingSoon = project.title === "SafeSpace" || project.title === "TWICE Posters";
+  const isComingSoon =
+    project.title === "SafeSpace" || project.title === "TWICE Posters";
 
   return (
     <Link
@@ -78,7 +78,9 @@ const ProjectGridCard = ({ project }) => {
         />
         {isComingSoon && (
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-            <span className="text-white text-lg font-semibold">Coming soon!</span>
+            <span className="text-white text-lg font-semibold">
+              Coming soon!
+            </span>
           </div>
         )}
       </div>
