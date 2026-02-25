@@ -37,7 +37,7 @@ export const StarlightSodaPage = () => {
       <section className="px-4 pb-14">
         <div className="mx-auto w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-7 rounded-3xl p-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Overview
             </h2>
             <p className="text-gray-800 leading-relaxed">
@@ -70,7 +70,7 @@ export const StarlightSodaPage = () => {
           </div>
 
           <div className="lg:col-span-7 rounded-3xl p-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Design Rationale
             </h2>
             <p className="text-gray-800 leading-relaxed">
@@ -91,11 +91,11 @@ export const StarlightSodaPage = () => {
 
       <section className="px-4 pb-14">
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-xl font-semibold text-gray-900 mb-6">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
             Design Process
           </h2>
 
-          <div className="text-sm font-semibold tracking-wide text-black mb-4">
+          <div className="text-base font-semibold tracking-wide text-black mb-4">
             Watermark
           </div>
 
@@ -113,7 +113,7 @@ export const StarlightSodaPage = () => {
 
       <section className="px-4 pb-14">
         <div className="mx-auto w-full max-w-6xl">
-          <div className="text-sm font-semibold tracking-wide text-black mb-6">
+          <div className="text-base font-semibold tracking-wide text-black mb-6">
             Results
           </div>
 
@@ -153,7 +153,7 @@ export const StarlightSodaPage = () => {
 
       <section className="px-4 pb-28">
         <div className="mx-auto w-full max-w-6xl">
-          <div className="text-sm font-semibold tracking-wide text-black mb-6">
+          <div className="text-base font-semibold tracking-wide text-black mb-6">
             Dielines
           </div>
 

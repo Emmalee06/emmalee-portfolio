@@ -28,6 +28,7 @@ const projects = [
     image: "/menu_project_cover.png",
     layout: "left",
     colorScheme: "pink",
+    to: "/projects/menu-design",
   },
 ];
 

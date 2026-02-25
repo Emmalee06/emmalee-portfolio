@@ -3,6 +3,7 @@ import { Footer } from "./components/Footer/index.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./pages/HomePage.jsx";
 import { StarlightSodaPage } from "./pages/projects/StarlightSodaPage.jsx";
+import { MenuDesignPage } from "./pages/projects/MenuDesignPage.jsx";
 import { ProjectsPage } from "./pages/ProjectsPage.jsx";
 import { GalleryPage } from "./pages/GalleryPage.jsx";
 import { AboutPage } from "./pages/AboutPage.jsx";
@@ -21,6 +22,7 @@ function App() {
               path="/projects/starlight-soda"
               element={<StarlightSodaPage />}
             />
+            <Route path="/projects/menu-design" element={<MenuDesignPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
