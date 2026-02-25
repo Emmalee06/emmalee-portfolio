@@ -1,1 +1,0 @@
-export { ProjectImageSection } from "./ProjectImageSection";
