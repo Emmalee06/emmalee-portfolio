@@ -1,11 +1,11 @@
-import { Navbar } from "./components/NavBar";
-import { Footer } from "./components/Footer";
+import { Navbar } from "./components/NavBar/index.js";
+import { Footer } from "./components/Footer/index.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage } from "./pages/HomePage";
-import { StarlightSodaPage } from "./pages/projects/StarlightSodaPage";
-import { ProjectsPage } from "./pages/ProjectsPage";
-import { GalleryPage } from "./pages/GalleryPage";
-import { AboutPage } from "./pages/AboutPage";
+import { HomePage } from "./pages/HomePage.jsx";
+import { StarlightSodaPage } from "./pages/projects/StarlightSodaPage.jsx";
+import { ProjectsPage } from "./pages/ProjectsPage.jsx";
+import { GalleryPage } from "./pages/GalleryPage.jsx";
+import { AboutPage } from "./pages/AboutPage.jsx";
 
 function App() {
   return (
@@ -17,7 +17,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/starlight-soda" element={<StarlightSodaPage />} />
+            <Route
+              path="/projects/starlight-soda"
+              element={<StarlightSodaPage />}
+            />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>

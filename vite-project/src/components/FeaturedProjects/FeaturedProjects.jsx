@@ -7,8 +7,8 @@ const projects = [
     description:
       "SafeSpace is an app designed to help women and gender-diverse people foster safer, and more inclusive worksites.",
     image: "/safespace_project_cover.png",
-    layout: "left" as const,
-    colorScheme: "purple" as const,
+    layout: "left",
+    colorScheme: "purple",
   },
   {
     title: "Can Design",
@@ -16,8 +16,8 @@ const projects = [
     description:
       "Starlight Soda is a naturally flavoured soda that takes inspiration from the constellations. Discover your zodiac sign through a unique taste of bubbles.",
     image: "/can_project_cover.png",
-    layout: "right" as const,
-    colorScheme: "blue" as const,
+    layout: "right",
+    colorScheme: "blue",
     to: "/projects/starlight-soda",
   },
   {
@@ -26,8 +26,8 @@ const projects = [
     description:
       "Daydream Diner is a popular retro-themed brunch spot for families to spend their time. Enjoy the warm food and refreshing drinks, kids eat free!",
     image: "/menu_project_cover.png",
-    layout: "left" as const,
-    colorScheme: "pink" as const,
+    layout: "left",
+    colorScheme: "pink",
   },
 ];
 

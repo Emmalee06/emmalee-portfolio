@@ -1,13 +1,6 @@
 import { useEffect } from "react";
-import type { ReactNode } from "react";
 
-const InfoPill = ({
-  label,
-  children,
-}: {
-  label: string;
-  children: ReactNode;
-}) => {
+const InfoPill = ({ label, children }) => {
   return (
     <div className="rounded-3xl px-6 py-5">
       <div className="text-sm font-semibold tracking-wide text-gray-800/80">
@@ -86,9 +79,9 @@ export const StarlightSodaPage = () => {
               a celestial-inspired brand rooted in zodiac symbolism, where each
               flavour is designed to express a clear personality. Inspired by
               constellations, the design uses a graceful female figure and
-              purposeful colour. The soft blues and purples for Aquarius’ Blue
+              purposeful colour. The soft blues and purples for Aquarius' Blue
               Raspberry to represent independence and loyalty, while the bold
-              tones for Scorpion’s Sour Grape and Leo’s Peach Mango showcase the
+              tones for Scorpion's Sour Grape and Leo's Peach Mango showcase the
               sharp and intuitive personality traits for both zodiacs.
             </p>
             <p className="mt-4 text-gray-800 leading-relaxed"></p>

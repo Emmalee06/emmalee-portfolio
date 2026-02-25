@@ -1,13 +1,6 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-interface NavItem {
-  label: string;
-  href: string;
-  isActive: boolean;
-}
-
-const navItems: NavItem[] = [
+const navItems = [
   { label: "Home", href: "/", isActive: true },
   { label: "Projects", href: "/projects", isActive: false },
   { label: "Gallery", href: "/gallery", isActive: false },
@@ -15,8 +8,16 @@ const navItems: NavItem[] = [
 ];
 
 export const Navbar = () => {
-  const [activeItem, setActiveItem] = useState("Home");
   const location = useLocation();
+
+  const getActiveLabel = (pathname) => {
+    const match = navItems.find((i) =>
+      i.href === "/" ? pathname === "/" : pathname.startsWith(i.href),
+    );
+    return match ? match.label : "Home";
+  };
+
+  const activeLabel = getActiveLabel(location.pathname);
 
   return (
     <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
@@ -29,18 +30,16 @@ export const Navbar = () => {
           <ul className="hidden md:flex items-center gap-12">
             {navItems.map((item) => (
               <li key={item.label}>
-                <a
-                  href={item.href}
-                  onClick={() => setActiveItem(item.label)}
+                <Link
+                  to={item.href}
                   className={`text-lg font-medium transition-all ${
-                    (location.pathname === "/" && activeItem === item.label) ||
-                    (location.pathname !== "/" && item.label === "Home")
+                    activeLabel === item.label
                       ? "bg-gradient-to-r from-[#6C42A8] to-[#B54CB5] bg-clip-text text-transparent font-bold"
                       : "text-gray-800 hover:text-purple-600"
                   }`}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

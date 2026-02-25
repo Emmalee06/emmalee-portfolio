@@ -1,20 +1,11 @@
 import { useEffect, useState } from "react";
 
-interface Petal {
-  id: number;
-  left: number;
-  animationDuration: number;
-  animationDelay: number;
-  size: number;
-  rotation: number;
-}
-
 export const FallingPetals = () => {
-  const [petals, setPetals] = useState<Petal[]>([]);
+  const [petals, setPetals] = useState([]);
 
   useEffect(() => {
     const petalCount = 20;
-    const newPetals: Petal[] = [];
+    const newPetals = [];
 
     for (let i = 0; i < petalCount; i++) {
       newPetals.push({

@@ -1,24 +1,14 @@
 import { Linkedin, Instagram, Github } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-interface Petal {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  rotation: number;
-  vx: number;
-  vy: number;
-}
-
 export const Footer = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [, setPetals] = useState<Petal[]>([]);
+  const canvasRef = useRef(null);
+  const [, setPetals] = useState([]);
   const mousePos = useRef({ x: 0, y: 0 });
   const prevMousePos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    const initialPetals: Petal[] = [];
+    const initialPetals = [];
     const petalCount = 30;
 
     for (let i = 0; i < petalCount; i++) {
@@ -46,7 +36,7 @@ export const Footer = () => {
     canvas.width = window.innerWidth;
     canvas.height = 400;
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       const rect = canvas.getBoundingClientRect();
       prevMousePos.current = { ...mousePos.current };
       mousePos.current = {

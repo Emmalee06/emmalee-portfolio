@@ -1,20 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-interface Tag {
-  label: string;
-}
-
-interface ProjectCardProps {
-  title: string;
-  tags: Tag[];
-  description: string;
-  image: string;
-  layout: "left" | "right";
-  colorScheme: "purple" | "pink" | "blue";
-  to?: string;
-}
-
 const colorSchemes = {
   purple: {
     bg: "bg-purple-100/40",
@@ -41,7 +27,7 @@ export const ProjectCard = ({
   layout,
   colorScheme,
   to,
-}: ProjectCardProps) => {
+}) => {
   const colors = colorSchemes[colorScheme];
 
   return (
