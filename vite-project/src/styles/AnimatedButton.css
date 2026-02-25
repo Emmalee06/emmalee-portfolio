@@ -1,0 +1,28 @@
+/* Animated gradient background movement on hover, no color on normal */
+.gradient-animated-btn {
+  background: transparent;
+  color: #222;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+.gradient-animated-btn:hover {
+  color: #111;
+  background: linear-gradient(
+    270deg,
+    #cffafe 0%,
+    #c4b5fd 50%,
+    #fbcfe8 100%,
+    #cffafe 200%
+  );
+  background-size: 400% 400%;
+  animation: gradient-move 2.5s linear infinite;
+}
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}

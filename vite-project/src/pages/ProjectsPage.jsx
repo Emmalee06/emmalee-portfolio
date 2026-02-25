@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight, ChevronDown, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FallingPetals } from "../components/FallingPetals";
+import "../styles/AnimatedButton.css";
 
 const allProjects = [
   {
@@ -56,13 +57,16 @@ const ProjectGridCard = ({ project }) => {
   const isContainImage =
     project.title === "Can Design" || project.title === "Menu Design";
 
+  const isComingSoon = project.title === "SafeSpace" || project.title === "TWICE Posters";
+
   return (
     <Link
       to={project.to || "#"}
-      className="group flex flex-col h-full bg-white/30 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 hover:shadow-xl hover:border-white/70 transition-all duration-300 p-3"
+      className="group flex flex-col h-full bg-white/30 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 hover:shadow-xl hover:border-white/70 transition-all duration-300 p-3 relative"
+      tabIndex={0}
     >
       {/* Image Container */}
-      <div className="w-full h-48 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl overflow-hidden flex items-center justify-center flex-shrink-0">
+      <div className="w-full h-48 bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl overflow-hidden flex items-center justify-center flex-shrink-0 relative">
         <img
           src={project.image}
           alt={project.title}
@@ -72,6 +76,11 @@ const ProjectGridCard = ({ project }) => {
               : "w-full h-full object-cover group-hover:scale-105"
           }`}
         />
+        {isComingSoon && (
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+            <span className="text-white text-lg font-semibold">Coming soon!</span>
+          </div>
+        )}
       </div>
 
       {/* Content Container */}
@@ -83,7 +92,7 @@ const ProjectGridCard = ({ project }) => {
 
         {/* Tags */}
         <div className="flex flex-nowrap gap-2 mb-4">
-          {project.tags.slice(0, 2).map((tag, index) => (
+          {project.tags.map((tag, index) => (
             <span
               key={index}
               className="px-3 py-1 text-xs font-medium text-gray-800 border border-gray-800 rounded-full bg-transparent"
@@ -249,7 +258,7 @@ export const ProjectsPage = () => {
             </p>
             <Link
               to="/gallery"
-              className="group relative px-8 py-3 rounded-full border border-gray-800 text-gray-800 font-medium text-lg overflow-hidden transition-all duration-300 hover:text-white inline-block"
+              className="group relative px-8 py-3 rounded-full border border-gray-800 text-gray-800 font-medium text-lg overflow-hidden transition-all duration-300 gradient-animated-btn inline-block"
             >
               <span className="relative z-10">My Garden</span>
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-200/70 via-purple-400/70 to-pink-300/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

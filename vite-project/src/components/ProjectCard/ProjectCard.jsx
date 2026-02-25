@@ -29,13 +29,14 @@ export const ProjectCard = ({
   to,
 }) => {
   const colors = colorSchemes[colorScheme];
+  const isComingSoon = title === "SafeSpace" || title === "TWICE Posters";
 
   return (
     <div
       className={`group flex flex-col ${layout === "right" ? "lg:flex-row-reverse" : "lg:flex-row"} items-stretch gap-8 w-full max-w-6xl mx-auto mb-12 px-4`}
     >
       <div
-        className={`w-full lg:w-2/5 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl p-8 shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex flex-col justify-between`}
+        className={`w-full lg:w-2/5 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl p-8 shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex flex-col justify-between relative`}
       >
         <div>
           <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
@@ -73,10 +74,15 @@ export const ProjectCard = ({
             <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-1" />
           </button>
         )}
+        {isComingSoon && (
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 rounded-3xl">
+            <span className="text-white text-lg font-semibold">Coming soon!</span>
+          </div>
+        )}
       </div>
 
       <div
-        className={`w-full lg:w-3/5 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl overflow-hidden shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex items-center justify-center min-h-[500px]`}
+        className={`w-full lg:w-3/5 ${colors.bg} ${colors.hover} backdrop-blur-md rounded-3xl overflow-hidden shadow-xl ${colors.shadow} transition-all duration-300 border border-white/50 flex items-center justify-center min-h-[500px] relative`}
       >
         {to ? (
           <Link
@@ -96,6 +102,11 @@ export const ProjectCard = ({
             alt={title}
             className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
           />
+        )}
+        {isComingSoon && (
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 rounded-3xl">
+            <span className="text-white text-lg font-semibold">Coming soon!</span>
+          </div>
         )}
       </div>
     </div>

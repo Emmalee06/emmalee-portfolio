@@ -23,7 +23,7 @@ export const Navbar = () => {
     <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
       <div className="relative bg-white/30 backdrop-blur-md rounded-full shadow-lg border border-white/40 px-8 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" aria-label="Go to home">
+          <Link to="/" aria-label="Go to home" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}>
             <img src="/logo_navbar.png" alt="ED Logo" className="h-8 w-auto" />
           </Link>
 
@@ -37,6 +37,7 @@ export const Navbar = () => {
                       ? "bg-gradient-to-r from-[#6C42A8] to-[#B54CB5] bg-clip-text text-transparent font-bold"
                       : "text-gray-800 hover:text-purple-600"
                   }`}
+                  onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "instant" })}
                 >
                   {item.label}
                 </Link>
