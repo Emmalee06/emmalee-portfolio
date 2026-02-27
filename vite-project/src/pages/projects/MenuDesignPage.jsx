@@ -77,10 +77,11 @@ export const MenuDesignPage = () => {
             <p className="text-gray-800 leading-relaxed">
               Consumers struggle to find experiences that feel nostalgic and
               comforting. The Daydream Diner menu is designed to capture the
-              charm of a retro- era diner while inviting guests into a warm,
-              imaginative space. This design blends vintage typography, classic
-              iconography, and a cohesive colour palette to evoke familiarity
-              and comfort.
+              charm of a retro-era diner while inviting guests into a warm,
+              imaginative escape. Inspired by mid-century Americana, the design
+              blends vintage typography, classic iconography, and a cohesive
+              colour palette to evoke familiarity and comfort. This style of
+              design helps create the experience of nostalgia for customers.
             </p>
           </div>
         </div>
