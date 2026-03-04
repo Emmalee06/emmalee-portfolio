@@ -9,6 +9,7 @@ const projects = [
     image: "/safespace_project_cover.png",
     layout: "left",
     colorScheme: "purple",
+    to: "/projects/safespace",
   },
   {
     title: "Can Design",

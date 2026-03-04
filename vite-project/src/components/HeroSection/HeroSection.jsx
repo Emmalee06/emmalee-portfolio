@@ -1,4 +1,3 @@
-
 import "../../styles/AnimatedButton.css";
 import { Link } from "react-router-dom";
 
@@ -18,12 +17,18 @@ export const HeroSection = () => {
         </h2>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-          <Link to="/about" className="group relative px-8 py-3 rounded-full border border-gray-800 text-gray-800 font-medium text-lg overflow-hidden transition-all duration-300 gradient-animated-btn">
+          <Link
+            to="/about"
+            className="group relative px-8 py-3 rounded-full border border-gray-800 text-gray-800 font-medium text-lg overflow-hidden transition-all duration-300 gradient-animated-btn"
+          >
             <span className="relative z-10">Let's Connect!</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-200/70 via-purple-400/70 to-pink-300/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
 
-          <Link to="/projects" className="group relative px-8 py-3 rounded-full border border-gray-800 text-gray-800 font-medium text-lg overflow-hidden transition-all duration-300 gradient-animated-btn">
+          <Link
+            to="/projects"
+            className="group relative px-8 py-3 rounded-full border border-gray-800 text-gray-800 font-medium text-lg overflow-hidden transition-all duration-300 gradient-animated-btn"
+          >
             <span className="relative z-10">View My Projects</span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-200/70 via-purple-400/70 to-pink-300/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>

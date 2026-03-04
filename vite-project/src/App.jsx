@@ -8,6 +8,7 @@ import { MenuDesignPage } from "./pages/projects/MenuDesignPage.jsx";
 import { ProjectsPage } from "./pages/ProjectsPage.jsx";
 import { GalleryPage } from "./pages/GalleryPage.jsx";
 import { AboutPage } from "./pages/AboutPage.jsx";
+import { SafeSpaceCaseStudyPage } from "./pages/projects/SafeSpaceCaseStudyPage.jsx";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
               element={<StarlightSodaPage />}
             />
             <Route path="/projects/menu-design" element={<MenuDesignPage />} />
+            <Route
+              path="/projects/safespace"
+              element={<SafeSpaceCaseStudyPage />}
+            />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>

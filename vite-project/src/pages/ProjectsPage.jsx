@@ -13,6 +13,7 @@ const allProjects = [
     description:
       "SafeSpace is an app designed to help women and gender-diverse people foster safer, and more inclusive worksites.",
     image: "/safespace_project_cover.png",
+    to: "/projects/safespace",
   },
   {
     id: 2,
@@ -76,13 +77,7 @@ const ProjectGridCard = ({ project }) => {
               : "w-full h-full object-cover group-hover:scale-105"
           }`}
         />
-        {isComingSoon && (
-          <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-            <span className="text-white text-lg font-semibold">
-              Coming soon!
-            </span>
-          </div>
-        )}
+        {/* Removed 'coming soon' overlay */}
       </div>
 
       {/* Content Container */}
