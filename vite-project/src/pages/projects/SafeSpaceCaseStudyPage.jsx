@@ -1,9 +1,68 @@
-﻿import "../../styles/AnimatedButton.css";
+﻿import { useState, useRef } from "react";
+import "../../styles/AnimatedButton.css";
 import { Link } from "react-router-dom";
 import { Badge } from "../../components/ui/badge";
 import { ArrowRight } from "lucide-react";
 
+const SITEMAP_SRC = "/case_study/to%20put%20in%20portfolio/sitemap.png";
+
+const WIREFRAME_PAGES = [
+  { label: "Lo-Fi",          nodeId: "1-10" },
+  { label: "Hi-Fi",          nodeId: "1510-2777" },
+  { label: "Web Supplement", nodeId: "626-2283" },
+];
+
+const FIGMA_BASE =
+  "https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FMXFOSweojBY1qFrCWJ70dG%2FUX-UI-MOCKUPS--Copy-%3Fnode-id%3D";
+
 export const SafeSpaceCaseStudyPage = () => {
+  const [activeWireframe, setActiveWireframe] = useState(0);
+  const [sitemapExpanded, setSitemapExpanded] = useState(false);
+  const [zoomScale, setZoomScale] = useState(1);
+  const [panPos, setPanPos] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartRef = useRef(null);
+  const containerRef = useRef(null);
+
+  const openLightbox = () => {
+    setSitemapExpanded(true);
+    setZoomScale(1);
+    setPanPos({ x: 0, y: 0 });
+  };
+
+  const closeLightbox = () => {
+    setSitemapExpanded(false);
+    setZoomScale(1);
+    setPanPos({ x: 0, y: 0 });
+  };
+
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const zoomFactor = e.deltaY < 0 ? 1.12 : 1 / 1.12;
+    const newScale = Math.min(Math.max(zoomScale * zoomFactor, 0.5), 8);
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const mx = e.clientX - rect.left - rect.width / 2;
+      const my = e.clientY - rect.top - rect.height / 2;
+      const ratio = newScale / zoomScale;
+      setPanPos({ x: mx + (panPos.x - mx) * ratio, y: my + (panPos.y - my) * ratio });
+    }
+    setZoomScale(newScale);
+  };
+
+  const handleMouseDown = (e) => {
+    if (e.button !== 0) return;
+    setIsDragging(true);
+    dragStartRef.current = { x: e.clientX - panPos.x, y: e.clientY - panPos.y };
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging || !dragStartRef.current) return;
+    setPanPos({ x: e.clientX - dragStartRef.current.x, y: e.clientY - dragStartRef.current.y });
+  };
+
+  const handleMouseUp = () => setIsDragging(false);
+
   return (
     <div className="relative z-10">
       <section className="pt-32 pb-10 px-4">
@@ -377,6 +436,140 @@ export const SafeSpaceCaseStudyPage = () => {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Design Journey Section */}
+      <section id="design" className="px-4 pb-14">
+        <div className="mx-auto w-full max-w-6xl">
+          <h2 className="text-3xl font-bold text-[#672AAF] mb-6">Design Journey</h2>
+          <p className="text-lg text-gray-800 leading-relaxed mb-12">
+            The SafeSpace design journey began with low-fidelity wireframes to map out core user flows and prioritize clarity and accessibility. Early sketches focused on reducing friction, ensuring users could quickly report incidents or access support without confusion. From there, a structured sitemap was developed to organize content logically and highlight the most critical features, reinforcing a sense of safety and ease of navigation. These foundations informed the final high-fidelity prototype, where thoughtful typography, calming colour choices, and intuitive interactions were implemented to create a supportive and user-centered experience.
+          </p>
+
+          {/* 01. Sitemap */}
+          <div className="mb-14">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">01. Sitemap</h3>
+            <div
+              className="rounded-3xl border border-white/50 shadow-xl shadow-purple-200/40 overflow-hidden cursor-zoom-in"
+              onClick={openLightbox}
+              title="Click to expand"
+            >
+              <img
+                src={SITEMAP_SRC}
+                alt="SafeSpace Sitemap"
+                className="w-full block object-cover"
+              />
+            </div>
+            <p className="text-sm text-gray-400 mt-2 text-center">Click image to expand</p>
+          </div>
+
+          {/* Sitemap lightbox */}
+          {sitemapExpanded && (
+            <div
+              className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm"
+              onClick={closeLightbox}
+            >
+              {/* Controls */}
+              <div
+                className="absolute top-4 right-4 z-10 flex items-center gap-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  onClick={() => { const s = Math.min(zoomScale + 0.5, 8); const r = s / zoomScale; setPanPos(p => ({ x: p.x * r, y: p.y * r })); setZoomScale(s); }}
+                  className="bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-800 text-xl font-bold transition-colors"
+                  aria-label="Zoom in"
+                >+</button>
+                <button
+                  onClick={() => { setZoomScale(1); setPanPos({ x: 0, y: 0 }); }}
+                  className="bg-white/90 hover:bg-white rounded-full px-3 h-9 flex items-center justify-center shadow-lg text-gray-800 text-sm font-semibold transition-colors"
+                  aria-label="Reset zoom"
+                >Reset</button>
+                <button
+                  onClick={() => { const s = Math.max(zoomScale - 0.5, 0.5); const r = s / zoomScale; setPanPos(p => ({ x: p.x * r, y: p.y * r })); setZoomScale(s); }}
+                  className="bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-800 text-xl font-bold transition-colors"
+                  aria-label="Zoom out"
+                >&minus;</button>
+                <button
+                  onClick={closeLightbox}
+                  className="bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-800 text-xl font-bold transition-colors ml-2"
+                  aria-label="Close"
+                >&times;</button>
+              </div>
+
+              {/* Hint */}
+              <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50 text-xs select-none">
+                Scroll to zoom &nbsp;·&nbsp; Drag to pan
+              </p>
+
+              {/* Zoom/pan container */}
+              <div
+                ref={containerRef}
+                className="w-full h-full flex items-center justify-center overflow-hidden"
+                style={{ cursor: isDragging ? "grabbing" : zoomScale > 1 ? "grab" : "zoom-out" }}
+                onWheel={handleWheel}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
+                onClick={(e) => { if (!isDragging) closeLightbox(); e.stopPropagation(); }}
+              >
+                <img
+                  src={SITEMAP_SRC}
+                  alt="SafeSpace Sitemap (expanded)"
+                  draggable={false}
+                  style={{
+                    transform: `translate(${panPos.x}px, ${panPos.y}px) scale(${zoomScale})`,
+                    transformOrigin: "center",
+                    transition: isDragging ? "none" : "transform 0.08s ease",
+                    maxWidth: "90vw",
+                    maxHeight: "88vh",
+                    objectFit: "contain",
+                    userSelect: "none",
+                    borderRadius: "1.5rem",
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* 02. Wireframes */}
+          <div className="mb-14">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">02. Wireframes</h3>
+            <p className="text-lg text-gray-800 leading-relaxed mb-4">
+              Explore the full wireframe set below — switch between Lo-Fi, Hi-Fi, and Web Supplement using the tabs.
+            </p>
+
+            {/* Page tabs */}
+            <div className="flex gap-2 mb-4">
+              {WIREFRAME_PAGES.map((page, i) => (
+                <button
+                  key={page.nodeId}
+                  onClick={() => setActiveWireframe(i)}
+                  className={`rounded-full px-5 py-2 text-sm font-semibold border transition-colors focus:outline-none ${
+                    activeWireframe === i
+                      ? "bg-[#672AAF] text-white border-[#672AAF]"
+                      : "border-gray-300 text-gray-800 hover:bg-purple-100 hover:border-purple-300"
+                  }`}
+                >
+                  {page.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="rounded-3xl border border-white/50 bg-white/25 backdrop-blur-md shadow-xl shadow-purple-200/40 overflow-hidden">
+              <iframe
+                key={WIREFRAME_PAGES[activeWireframe].nodeId}
+                title={`SafeSpace Wireframes — ${WIREFRAME_PAGES[activeWireframe].label}`}
+                style={{ border: "none" }}
+                width="100%"
+                height="700"
+                src={`${FIGMA_BASE}${WIREFRAME_PAGES[activeWireframe].nodeId}%26t%3DWHtdCGsxj3QeKkue-1`}
+                allowFullScreen
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
