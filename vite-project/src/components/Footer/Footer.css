@@ -1,63 +1,32 @@
-/* ─────────────────────────────────────────────────────────────────
-   Footer root
-   No background here — the CSS dome div provides it.
-   overflow:visible on root; petals-layer clips petals to footer bounds.
-───────────────────────────────────────────────────────────────── */
 .footer-root {
   position: relative;
   overflow: visible;
-  /* padding-top must clear the dome arc at the edges.
-     Arc at edges = 25 % of footer height.
-     For a ~430 px footer that is ~107 px; 140 px gives a
-     comfortable margin so content starts well inside the dome. */
   padding-top: 140px;
   padding-bottom: 60px;
   min-height: 400px;
   margin-top: 160px;
 }
 
-/* ─────────────────────────────────────────────────────────────────
-   CSS dome  — pure border-radius half-ellipse
-   border-radius: 50% 50% 0 0 / 25% 25% 0 0
-     Horizontal radii: 50 % each → spans the full width
-     Vertical radii:   25 %      → arc drops 25 % of footer
-                                   height at the edges and
-                                   peaks at y = 0 at the centre.
-   filter:blur(8px) matches the soft edge from the Figma footer.svg
-   (feGaussianBlur stdDeviation=8.45) and only affects this div,
-   never the sibling petals or content.
-───────────────────────────────────────────────────────────────── */
 .footer-dome {
   position: absolute;
   inset: 0;
-  background: #E9DBFF;
+  background: #e9dbff;
   border-radius: 50% 50% 0 0 / 25% 25% 0 0;
   filter: blur(8px);
   z-index: 0;
 }
 
-/* ─────────────────────────────────────────────────────────────────
-   Petal layer
-   height:100 % ensures petal `top` percentages resolve against
-   the full footer height — identical coordinate space to the dome.
-───────────────────────────────────────────────────────────────── */
 .footer-petals-layer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* pointer-events off on the container so links/icons below work;
-     the hover zone child re-enables them for the animation trigger */
   pointer-events: none;
   overflow: visible;
   z-index: 5;
 }
 
-/* footer-petal-wrap — the element GSAP animates (x, y, rotation, opacity).
-   No CSS transform here so GSAP owns the transform property outright.
-   Starts opacity:0; useEffect gsap.set() makes it visible after seeding
-   GSAP's internal state, ensuring a clean handoff with no flash.       */
 .footer-petal-wrap {
   position: absolute;
   transform-origin: center center;
@@ -66,8 +35,6 @@
   will-change: transform, opacity;
 }
 
-/* footer-petal-img — purely visual; CSS owns rotate + scale forever.
-   GSAP never touches this element's transform.                         */
 .footer-petal-img {
   display: block;
   transform-origin: center center;
@@ -76,9 +43,6 @@
   pointer-events: none;
 }
 
-/* ─────────────────────────────────────────────────────────────────
-   Footer content — sits above dome and petals
-───────────────────────────────────────────────────────────────── */
 .footer-content {
   position: relative;
   z-index: 10;

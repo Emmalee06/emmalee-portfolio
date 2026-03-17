@@ -5,11 +5,8 @@ import "./Footer.css";
 export const Footer = () => {
   return (
     <footer className="footer-root">
-      {/* CSS half-ellipse dome — border-radius + filter:blur creates
-          the soft-edged lavender background without any SVG file    */}
       <div className="footer-dome" aria-hidden="true" />
 
-      {/* Petal pile — scatters on hover, returns on mouse leave */}
       <FooterPetals />
 
       {/* Main content */}
