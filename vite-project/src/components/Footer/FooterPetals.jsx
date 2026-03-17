@@ -85,29 +85,32 @@ const FooterPetals = () => {
     gsap.killTweensOf(wrap);
 
     const leftPct = parseFloat(p.left);
+    // side: -1 = far left, 0 = center, 1 = far right
     const side = (leftPct - 50) / 50;
+
+    // Sweep strongly sideways based on position
     const flyX =
-      side * (150 + Math.random() * 100) + (Math.random() - 0.5) * 50;
-    const flyY = -(180 + Math.random() * 120);
-    const rotDelta = (side >= 0 ? 1 : -1) * (80 + Math.random() * 80);
+      side * (180 + Math.random() * 140) + (Math.random() - 0.5) * 40;
+    // Slight downward drift — no upward movement
+    const driftY = 30 + Math.random() * 50;
+    const rotDelta = (side >= 0 ? 1 : -1) * (60 + Math.random() * 80);
 
     const tl = gsap.timeline();
 
-    //Phase 1: fly away animation
+    // Sweep sideways and slightly down, then fade out
     tl.to(wrap, {
       x: flyX,
-      y: flyY,
+      y: driftY,
       rotation: rotDelta,
       opacity: 0,
-      scale: 0.6,
-      duration: 2.5,
+      duration: 1.4,
       ease: "power2.out",
     });
 
-    //Phase 2: reset to start position while invisible
+    // Reset while invisible
     tl.set(wrap, { x: 0, y: -24, rotation: 0, scale: 1, opacity: 0 });
 
-    //Phase 3: drift back in from slightly above
+    // Drift back into resting position
     tl.to(wrap, {
       y: 0,
       opacity: 1,

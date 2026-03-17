@@ -25,7 +25,7 @@ export const FallingPetals = () => {
         left: Math.random() * 100,
         animationDuration: duration,
         animationDelay: -(Math.random() * duration),
-        width: 25 + Math.random() * 45,
+        width: 30 + Math.random() * 45,
         src: PETAL_SVGS[Math.floor(Math.random() * PETAL_SVGS.length)],
       });
     }
