@@ -47,19 +47,33 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* pointer-events off on the container so links/icons below work,
-     individual petals re-enable them for later animation hooks  */
+  /* pointer-events off on the container so links/icons below work;
+     the hover zone child re-enables them for the animation trigger */
   pointer-events: none;
   overflow: visible;
   z-index: 5;
 }
 
-.footer-petal {
+/* footer-petal-wrap — the element GSAP animates (x, y, rotation, opacity).
+   No CSS transform here so GSAP owns the transform property outright.
+   Starts opacity:0; useEffect gsap.set() makes it visible after seeding
+   GSAP's internal state, ensuring a clean handoff with no flash.       */
+.footer-petal-wrap {
   position: absolute;
   transform-origin: center center;
   pointer-events: auto;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* footer-petal-img — purely visual; CSS owns rotate + scale forever.
+   GSAP never touches this element's transform.                         */
+.footer-petal-img {
+  display: block;
+  transform-origin: center center;
   user-select: none;
   -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 /* ─────────────────────────────────────────────────────────────────

@@ -9,7 +9,7 @@ export const Footer = () => {
           the soft-edged lavender background without any SVG file    */}
       <div className="footer-dome" aria-hidden="true" />
 
-      {/* Petal pile sitting on the dome arc — animation added later */}
+      {/* Petal pile — scatters on hover, returns on mouse leave */}
       <FooterPetals />
 
       {/* Main content */}
@@ -55,28 +55,36 @@ export const Footer = () => {
               <a
                 href="/"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-                onClick={e => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }}
+                onClick={(e) => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }}
               >
                 Home
               </a>
               <a
                 href="/projects"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-                onClick={e => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }}
+                onClick={(e) => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }}
               >
                 Projects
               </a>
               <a
                 href="/gallery"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-                onClick={e => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }}
+                onClick={(e) => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }}
               >
                 Gallery
               </a>
               <a
                 href="/about"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-                onClick={e => { window.scrollTo({ top: 0, left: 0, behavior: "instant" }); }}
+                onClick={(e) => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                }}
               >
                 About
               </a>
