@@ -1,0 +1,103 @@
+.heroSection {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 1rem 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    min-height: 90vh;
+  }
+}
+
+.heroContent {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 56rem;
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #1f2937;
+  line-height: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.heroSubtitle {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #111827;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .heroSubtitle {
+    font-size: 4.5rem;
+  }
+}
+
+.heroButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+@media (min-width: 640px) {
+  .heroButtons {
+    flex-direction: row;
+  }
+}
+
+.heroButton {
+  position: relative;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  border: 1px solid #1f2937;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 1.125rem;
+  overflow: hidden;
+  transition: all 300ms;
+  background: transparent;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.heroButton:hover {
+  color: #111;
+  background: linear-gradient(
+    270deg,
+    #cffafe 0%,
+    #c4b5fd 50%,
+    #fbcfe8 100%,
+    #cffafe 200%
+  );
+  background-size: 400% 400%;
+  animation: gradient-move 2.5s linear infinite;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+.heroButtonLabel {
+  position: relative;
+  z-index: 10;
+}

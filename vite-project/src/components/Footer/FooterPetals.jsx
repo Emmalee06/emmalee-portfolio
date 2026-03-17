@@ -100,7 +100,7 @@ const FooterPetals = () => {
       rotation: rotDelta,
       opacity: 0,
       scale: 0.6,
-      duration: 0.9,
+      duration: 2.5,
       ease: "power2.out",
     });
 

@@ -1,20 +1,32 @@
 import { useEffect, useState } from "react";
 
+const PETAL_SVGS = [
+  "/petals/petal_varOne.svg",
+  "/petals/petal_varTwo.svg",
+  "/petals/petal_varThree.svg",
+  "/petals/petal_varFour.svg",
+  "/petals/petal_varFive.svg",
+  "/petals/petal_varSix.svg",
+  "/petals/petal_varSeven.svg",
+  "/petals/petal_varEight.svg",
+];
+
 export const FallingPetals = () => {
   const [petals, setPetals] = useState([]);
 
   useEffect(() => {
-    const petalCount = 20;
+    const petalCount = 15;
     const newPetals = [];
 
     for (let i = 0; i < petalCount; i++) {
+      const duration = 10 + Math.random() * 10;
       newPetals.push({
         id: i,
         left: Math.random() * 100,
-        animationDuration: 15 + Math.random() * 10,
-        animationDelay: Math.random() * 10,
-        size: 0.6 + Math.random() * 0.8,
-        rotation: Math.random() * 360,
+        animationDuration: duration,
+        animationDelay: -(Math.random() * duration),
+        width: 25 + Math.random() * 45,
+        src: PETAL_SVGS[Math.floor(Math.random() * PETAL_SVGS.length)],
       });
     }
 
@@ -31,10 +43,13 @@ export const FallingPetals = () => {
             left: `${petal.left}%`,
             animationDuration: `${petal.animationDuration}s`,
             animationDelay: `${petal.animationDelay}s`,
-            transform: `scale(${petal.size}) rotate(${petal.rotation}deg)`,
           }}
         >
-          <div className="w-8 h-8 bg-purple-300/40 rounded-full blur-sm" />
+          <img
+            src={petal.src}
+            alt=""
+            style={{ width: `${petal.width}px`, height: `${petal.width}px` }}
+          />
         </div>
       ))}
     </div>
