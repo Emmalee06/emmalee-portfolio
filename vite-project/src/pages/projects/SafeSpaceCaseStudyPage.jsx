@@ -7,8 +7,8 @@ import { ArrowRight } from "lucide-react";
 const SITEMAP_SRC = "/case_study/to%20put%20in%20portfolio/sitemap.png";
 
 const WIREFRAME_PAGES = [
-  { label: "Lo-Fi",          nodeId: "1-10" },
-  { label: "Hi-Fi",          nodeId: "1510-2777" },
+  { label: "Lo-Fi", nodeId: "1-10" },
+  { label: "Hi-Fi", nodeId: "1510-2777" },
   { label: "Web Supplement", nodeId: "626-2283" },
 ];
 
@@ -45,7 +45,10 @@ export const SafeSpaceCaseStudyPage = () => {
       const mx = e.clientX - rect.left - rect.width / 2;
       const my = e.clientY - rect.top - rect.height / 2;
       const ratio = newScale / zoomScale;
-      setPanPos({ x: mx + (panPos.x - mx) * ratio, y: my + (panPos.y - my) * ratio });
+      setPanPos({
+        x: mx + (panPos.x - mx) * ratio,
+        y: my + (panPos.y - my) * ratio,
+      });
     }
     setZoomScale(newScale);
   };
@@ -58,7 +61,10 @@ export const SafeSpaceCaseStudyPage = () => {
 
   const handleMouseMove = (e) => {
     if (!isDragging || !dragStartRef.current) return;
-    setPanPos({ x: e.clientX - dragStartRef.current.x, y: e.clientY - dragStartRef.current.y });
+    setPanPos({
+      x: e.clientX - dragStartRef.current.x,
+      y: e.clientY - dragStartRef.current.y,
+    });
   };
 
   const handleMouseUp = () => setIsDragging(false);
@@ -159,15 +165,60 @@ export const SafeSpaceCaseStudyPage = () => {
               Table of Content:
             </h2>
             <div className="flex flex-wrap gap-2">
-              <a href="#background" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Background & Problem</a>
-              <a href="#solution" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Solution</a>
-              <a href="#research" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Research & Analysis</a>
-              <a href="#branding" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Branding</a>
-              <a href="#design" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Design Journey</a>
-              <a href="#marketing" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Digital Marketing</a>
-              <a href="#promo" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Promotional Material</a>
-              <a href="#wrapup" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Wrap Up</a>
-              <a href="#results" className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none">Results</a>
+              <a
+                href="#background"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Background & Problem
+              </a>
+              <a
+                href="#solution"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Solution
+              </a>
+              <a
+                href="#research"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Research & Analysis
+              </a>
+              <a
+                href="#branding"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Branding
+              </a>
+              <a
+                href="#design"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Design Journey
+              </a>
+              <a
+                href="#marketing"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Digital Marketing
+              </a>
+              <a
+                href="#promo"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Promotional Material
+              </a>
+              <a
+                href="#wrapup"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Wrap Up
+              </a>
+              <a
+                href="#results"
+                className="inline-flex items-center rounded-full border border-gray-300 px-5 py-2 text-base font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Results
+              </a>
             </div>
           </div>
 
@@ -215,18 +266,26 @@ export const SafeSpaceCaseStudyPage = () => {
 
         {/* Solution Section */}
         <div id="solution" className="mx-auto w-full max-w-6xl mt-32 mb-10">
-          <h2 className="text-3xl font-bold text-[#672AAF] mb-3">Meet SafeSpace</h2>
+          <h2 className="text-3xl font-bold text-[#672AAF] mb-3">
+            Meet SafeSpace
+          </h2>
           <p className="text-lg text-gray-800 leading-relaxed mb-12">
-            SafeSpace was created to help women and gender-diverse people foster safer, and more inclusive work environments. With the help of AI, the app can summarize anonymous worker reports and generate practical solutions that aims to change worksite culture.
+            SafeSpace was created to help women and gender-diverse people foster
+            safer, and more inclusive work environments. With the help of AI,
+            the app can summarize anonymous worker reports and generate
+            practical solutions that aims to change worksite culture.
           </p>
 
           {/* Feature 01 — text left, image right */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
             <div>
               <p className="text-base text-[#672AAF] font-semibold mb-1">01.</p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Check Site Safety</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Check Site Safety
+              </h3>
               <p className="text-lg text-gray-800 leading-relaxed">
-                See which job sites are safe before you arrive—giving you peace of mind and control over where you work.
+                See which job sites are safe before you arrive—giving you peace
+                of mind and control over where you work.
               </p>
             </div>
             <div className="rounded-3xl border border-white/50 shadow-xl shadow-purple-200/40 overflow-hidden">
@@ -253,9 +312,13 @@ export const SafeSpaceCaseStudyPage = () => {
             </div>
             <div className="order-1 lg:order-2">
               <p className="text-base text-[#672AAF] font-semibold mb-1">02.</p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">Discreetly Record</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Discreetly Record
+              </h3>
               <p className="text-lg text-gray-800 leading-relaxed">
-                Discreetly capture unsafe encounters with the help of our recording feature that immediately uploads your recording to the cloud.
+                Discreetly capture unsafe encounters with the help of our
+                recording feature that immediately uploads your recording to the
+                cloud.
               </p>
             </div>
           </div>
@@ -264,9 +327,12 @@ export const SafeSpaceCaseStudyPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
             <div>
               <p className="text-base text-[#672AAF] font-semibold mb-1">03.</p>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">File a Report</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                File a Report
+              </h3>
               <p className="text-lg text-gray-800 leading-relaxed">
-                Create fully anonymous reports to upload to our public posts, bringing more awareness to worksite safety issues.
+                Create fully anonymous reports to upload to our public posts,
+                bringing more awareness to worksite safety issues.
               </p>
             </div>
             <div className="rounded-3xl border border-white/50 shadow-xl shadow-purple-200/40 overflow-hidden">
@@ -285,45 +351,87 @@ export const SafeSpaceCaseStudyPage = () => {
       {/* Research & Analysis Section */}
       <section id="research" className="px-4 pb-14">
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-bold text-[#672AAF] mb-10">Research &amp; Analysis</h2>
+          <h2 className="text-3xl font-bold text-[#672AAF] mb-10">
+            Research &amp; Analysis
+          </h2>
 
           {/* 01. Competitive Analysis */}
           <div className="mb-14">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">01. Competitive Analysis</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              01. Competitive Analysis
+            </h3>
             <p className="text-lg text-gray-800 leading-relaxed mb-10">
-              In the early stages of development, the team conducted competitive research to understand the safety and wellness app landscape.{" "}
+              In the early stages of development, the team conducted competitive
+              research to understand the safety and wellness app landscape.{" "}
               <span className="text-[#b06fcf] font-semibold">Communia</span> and{" "}
-              <span className="text-[#e07b39] font-semibold">WorkSafety</span> Pro were identified as direct competitors, while{" "}
-              <span className="text-[#e07b39] font-semibold">Headspace</span> served as an indirect competitor. Across these platforms, common features such as accessible safety resources, community support, and strong privacy protections were identified, helping inform the foundational direction of SafeSpace's design.
+              <span className="text-[#e07b39] font-semibold">WorkSafety</span>{" "}
+              Pro were identified as direct competitors, while{" "}
+              <span className="text-[#e07b39] font-semibold">Headspace</span>{" "}
+              served as an indirect competitor. Across these platforms, common
+              features such as accessible safety resources, community support,
+              and strong privacy protections were identified, helping inform the
+              foundational direction of SafeSpace's design.
             </p>
             <div className="flex flex-row items-center justify-center gap-16">
-              <img src="/case_study/comunia.svg" alt="Communia logo" className="w-28 h-28 object-contain rounded-2xl" />
-              <img src="/case_study/worksafe.svg" alt="WorkSafety logo" className="w-28 h-28 object-contain rounded-2xl" />
-              <img src="/case_study/headspace.svg" alt="Headspace logo" className="w-28 h-28 object-contain rounded-2xl" />
+              <img
+                src="/case_study/comunia.svg"
+                alt="Communia logo"
+                className="w-28 h-28 object-contain rounded-2xl"
+              />
+              <img
+                src="/case_study/worksafe.svg"
+                alt="WorkSafety logo"
+                className="w-28 h-28 object-contain rounded-2xl"
+              />
+              <img
+                src="/case_study/headspace.svg"
+                alt="Headspace logo"
+                className="w-28 h-28 object-contain rounded-2xl"
+              />
             </div>
           </div>
 
           {/* 02. Interviews & Research */}
           <div className="mb-14">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">02. Interviews &amp; Research</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              02. Interviews &amp; Research
+            </h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <p className="text-lg text-gray-800 leading-relaxed mb-6">
-                  To better understand the problem, the team conducted multiple interviews with women working in trades, which provided powerful insight into how male-dominated the industry remains.
+                  To better understand the problem, the team conducted multiple
+                  interviews with women working in trades, which provided
+                  powerful insight into how male-dominated the industry remains.
                 </p>
                 <p className="text-lg text-gray-800 leading-relaxed">
-                  In addition, survey data further validated these findings: 66.7% of respondents reported feeling isolated at work due to their gender. With unfair treatment, feelings of exclusion, and male-dominated workplace culture identified as key contributing factors.
+                  In addition, survey data further validated these findings:
+                  66.7% of respondents reported feeling isolated at work due to
+                  their gender. With unfair treatment, feelings of exclusion,
+                  and male-dominated workplace culture identified as key
+                  contributing factors.
                 </p>
               </div>
               <div className="flex items-center justify-center">
                 <blockquote className="relative px-10 py-4">
-                  <span className="absolute top-0 left-0 text-7xl text-[#672AAF] font-serif leading-none">&ldquo;</span>
+                  <span className="absolute top-0 left-0 text-7xl text-[#672AAF] font-serif leading-none">
+                    &ldquo;
+                  </span>
                   <p className="text-2xl md:text-3xl text-gray-800 leading-snug">
-                    <span className="text-[#672AAF] font-bold text-3xl md:text-4xl">66.7%</span> of respondents reported feeling{" "}
-                    <span className="text-[#672AAF] font-bold text-3xl md:text-4xl">isolated</span> at work due to their{" "}
-                    <span className="text-[#672AAF] font-bold text-3xl md:text-4xl">gender</span>
+                    <span className="text-[#672AAF] font-bold text-3xl md:text-4xl">
+                      66.7%
+                    </span>{" "}
+                    of respondents reported feeling{" "}
+                    <span className="text-[#672AAF] font-bold text-3xl md:text-4xl">
+                      isolated
+                    </span>{" "}
+                    at work due to their{" "}
+                    <span className="text-[#672AAF] font-bold text-3xl md:text-4xl">
+                      gender
+                    </span>
                   </p>
-                  <span className="absolute bottom-0 right-0 text-7xl text-[#672AAF] font-serif leading-none">&rdquo;</span>
+                  <span className="absolute bottom-0 right-0 text-7xl text-[#672AAF] font-serif leading-none">
+                    &rdquo;
+                  </span>
                 </blockquote>
               </div>
             </div>
@@ -331,9 +439,18 @@ export const SafeSpaceCaseStudyPage = () => {
 
           {/* 03. User Persona's */}
           <div className="mb-14">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">03. User Persona&apos;s</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              03. User Persona&apos;s
+            </h3>
             <p className="text-lg text-gray-800 leading-relaxed mb-10">
-              Two user personas were developed to reflect SafeSpace's target audience: Aiyana, an Indigenous longshore worker navigating isolation and bias in a male-dominated workplace, and Noah, a non-binary electrician facing identity-based discrimination and fear of being outed. Both personas highlight the need for privacy, community support, and accessible safety resources. These insights guided SafeSpace's focus on secure reporting, anonymity, and inclusive connection for women and gender-diverse tradespeople.
+              Two user personas were developed to reflect SafeSpace's target
+              audience: Aiyana, an Indigenous longshore worker navigating
+              isolation and bias in a male-dominated workplace, and Noah, a
+              non-binary electrician facing identity-based discrimination and
+              fear of being outed. Both personas highlight the need for privacy,
+              community support, and accessible safety resources. These insights
+              guided SafeSpace's focus on secure reporting, anonymity, and
+              inclusive connection for women and gender-diverse tradespeople.
             </p>
 
             {/* Persona Images */}
@@ -365,15 +482,21 @@ export const SafeSpaceCaseStudyPage = () => {
           <div id="branding" className="mt-32 mb-14">
             <h2 className="text-3xl font-bold text-[#672AAF] mb-6">Branding</h2>
             <p className="text-lg text-gray-800 leading-relaxed mb-12">
-              SafeSpace&apos;s branding balances warmth with strength to reflect the realities of the trades industry. The team chose the Satoshi font for its clean, geometric yet rounded design, reinforcing clarity and approachability. A bold purple and orange colour palette was selected to symbolize empowerment, inclusivity, strength, and visibility; avoiding an overly feminine tone while remaining supportive. The logo was intentionally designed to clearly signal that SafeSpace is built to support tradespeople, symbolized by the hardhat and handshake.
+              SafeSpace&apos;s branding balances warmth with strength to reflect
+              the realities of the trades industry. The team chose the Satoshi
+              font for its clean, geometric yet rounded design, reinforcing
+              clarity and approachability. A bold purple and orange colour
+              palette was selected to symbolize empowerment, inclusivity,
+              strength, and visibility; avoiding an overly feminine tone while
+              remaining supportive. The logo was intentionally designed to
+              clearly signal that SafeSpace is built to support tradespeople,
+              symbolized by the hardhat and handshake.
             </p>
 
             {/* Branding visual grid */}
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
-
               {/* Left: Logo + Typography */}
               <div className="lg:col-span-3 flex flex-col gap-8">
-
                 {/* Logo */}
                 <div>
                   <img
@@ -385,15 +508,18 @@ export const SafeSpaceCaseStudyPage = () => {
 
                 {/* Satoshi Typography */}
                 <div>
-                  <p style={{ fontFamily: "'Satoshi', sans-serif" }} className="text-4xl text-gray-900 mb-4">
+                  <p
+                    style={{ fontFamily: "'Satoshi', sans-serif" }}
+                    className="text-4xl text-gray-900 mb-4"
+                  >
                     Satoshi
                   </p>
                   <div className="flex flex-wrap gap-3">
                     {[
                       { label: "regular", weight: "400", tw: "font-normal" },
-                      { label: "medium",  weight: "500", tw: "font-medium" },
-                      { label: "Bold",    weight: "600", tw: "font-semibold" },
-                      { label: "Black",   weight: "700", tw: "font-bold" },
+                      { label: "medium", weight: "500", tw: "font-medium" },
+                      { label: "Bold", weight: "600", tw: "font-semibold" },
+                      { label: "Black", weight: "700", tw: "font-bold" },
                     ].map(({ label, weight, tw }) => (
                       <div
                         key={weight}
@@ -407,7 +533,9 @@ export const SafeSpaceCaseStudyPage = () => {
                         </span>
                         <div className="flex items-center gap-2 mt-1">
                           <span className="text-xs text-gray-500">{label}</span>
-                          <span className="text-xs text-gray-400">{weight}</span>
+                          <span className="text-xs text-gray-400">
+                            {weight}
+                          </span>
                         </div>
                       </div>
                     ))}
@@ -418,38 +546,66 @@ export const SafeSpaceCaseStudyPage = () => {
               {/* Right: Color Palette */}
               <div className="lg:col-span-2 flex flex-col gap-3">
                 {[
-                  { name: "violet",  hex: "#8449DF", bg: "#8449DF", textColor: "text-white" },
-                  { name: "orange",  hex: "#F07832", bg: "#F07832", textColor: "text-white" },
-                  { name: "yellow",  hex: "#F5C518", bg: "#F5C518", textColor: "text-white" },
+                  {
+                    name: "violet",
+                    hex: "#8449DF",
+                    bg: "#8449DF",
+                    textColor: "text-white",
+                  },
+                  {
+                    name: "orange",
+                    hex: "#F07832",
+                    bg: "#F07832",
+                    textColor: "text-white",
+                  },
+                  {
+                    name: "yellow",
+                    hex: "#F5C518",
+                    bg: "#F5C518",
+                    textColor: "text-white",
+                  },
                 ].map(({ name, hex, bg, textColor }) => (
                   <div
                     key={name}
                     style={{ backgroundColor: bg }}
                     className="rounded-2xl px-6 py-6 flex flex-col justify-end"
                   >
-                    <p className={`text-base font-semibold ${textColor}`}>{name}</p>
+                    <p className={`text-base font-semibold ${textColor}`}>
+                      {name}
+                    </p>
                     <p className={`text-sm ${textColor} opacity-80`}>{hex}</p>
                   </div>
                 ))}
               </div>
-
             </div>
           </div>
-
         </div>
       </section>
 
       {/* Design Journey Section */}
       <section id="design" className="px-4 pb-14">
         <div className="mx-auto w-full max-w-6xl">
-          <h2 className="text-3xl font-bold text-[#672AAF] mb-6">Design Journey</h2>
+          <h2 className="text-3xl font-bold text-[#672AAF] mb-6">
+            Design Journey
+          </h2>
           <p className="text-lg text-gray-800 leading-relaxed mb-12">
-            The SafeSpace design journey began with low-fidelity wireframes to map out core user flows and prioritize clarity and accessibility. Early sketches focused on reducing friction, ensuring users could quickly report incidents or access support without confusion. From there, a structured sitemap was developed to organize content logically and highlight the most critical features, reinforcing a sense of safety and ease of navigation. These foundations informed the final high-fidelity prototype, where thoughtful typography, calming colour choices, and intuitive interactions were implemented to create a supportive and user-centered experience.
+            The SafeSpace design journey began with low-fidelity wireframes to
+            map out core user flows and prioritize clarity and accessibility.
+            Early sketches focused on reducing friction, ensuring users could
+            quickly report incidents or access support without confusion. From
+            there, a structured sitemap was developed to organize content
+            logically and highlight the most critical features, reinforcing a
+            sense of safety and ease of navigation. These foundations informed
+            the final high-fidelity prototype, where thoughtful typography,
+            calming colour choices, and intuitive interactions were implemented
+            to create a supportive and user-centered experience.
           </p>
 
           {/* 01. Sitemap */}
           <div className="mb-14">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">01. Sitemap</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              01. Sitemap
+            </h3>
             <div
               className="rounded-3xl border border-white/50 shadow-xl shadow-purple-200/40 overflow-hidden cursor-zoom-in"
               onClick={openLightbox}
@@ -461,7 +617,9 @@ export const SafeSpaceCaseStudyPage = () => {
                 className="w-full block object-cover"
               />
             </div>
-            <p className="text-sm text-gray-400 mt-2 text-center">Click image to expand</p>
+            <p className="text-sm text-gray-400 mt-2 text-center">
+              Click image to expand
+            </p>
           </div>
 
           {/* Sitemap lightbox */}
@@ -476,25 +634,46 @@ export const SafeSpaceCaseStudyPage = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
-                  onClick={() => { const s = Math.min(zoomScale + 0.5, 8); const r = s / zoomScale; setPanPos(p => ({ x: p.x * r, y: p.y * r })); setZoomScale(s); }}
+                  onClick={() => {
+                    const s = Math.min(zoomScale + 0.5, 8);
+                    const r = s / zoomScale;
+                    setPanPos((p) => ({ x: p.x * r, y: p.y * r }));
+                    setZoomScale(s);
+                  }}
                   className="bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-800 text-xl font-bold transition-colors"
                   aria-label="Zoom in"
-                >+</button>
+                >
+                  +
+                </button>
                 <button
-                  onClick={() => { setZoomScale(1); setPanPos({ x: 0, y: 0 }); }}
+                  onClick={() => {
+                    setZoomScale(1);
+                    setPanPos({ x: 0, y: 0 });
+                  }}
                   className="bg-white/90 hover:bg-white rounded-full px-3 h-9 flex items-center justify-center shadow-lg text-gray-800 text-sm font-semibold transition-colors"
                   aria-label="Reset zoom"
-                >Reset</button>
+                >
+                  Reset
+                </button>
                 <button
-                  onClick={() => { const s = Math.max(zoomScale - 0.5, 0.5); const r = s / zoomScale; setPanPos(p => ({ x: p.x * r, y: p.y * r })); setZoomScale(s); }}
+                  onClick={() => {
+                    const s = Math.max(zoomScale - 0.5, 0.5);
+                    const r = s / zoomScale;
+                    setPanPos((p) => ({ x: p.x * r, y: p.y * r }));
+                    setZoomScale(s);
+                  }}
                   className="bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-800 text-xl font-bold transition-colors"
                   aria-label="Zoom out"
-                >&minus;</button>
+                >
+                  &minus;
+                </button>
                 <button
                   onClick={closeLightbox}
                   className="bg-white/90 hover:bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-800 text-xl font-bold transition-colors ml-2"
                   aria-label="Close"
-                >&times;</button>
+                >
+                  &times;
+                </button>
               </div>
 
               {/* Hint */}
@@ -506,13 +685,22 @@ export const SafeSpaceCaseStudyPage = () => {
               <div
                 ref={containerRef}
                 className="w-full h-full flex items-center justify-center overflow-hidden"
-                style={{ cursor: isDragging ? "grabbing" : zoomScale > 1 ? "grab" : "zoom-out" }}
+                style={{
+                  cursor: isDragging
+                    ? "grabbing"
+                    : zoomScale > 1
+                      ? "grab"
+                      : "zoom-out",
+                }}
                 onWheel={handleWheel}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseUp}
-                onClick={(e) => { if (!isDragging) closeLightbox(); e.stopPropagation(); }}
+                onClick={(e) => {
+                  if (!isDragging) closeLightbox();
+                  e.stopPropagation();
+                }}
               >
                 <img
                   src={SITEMAP_SRC}
@@ -536,9 +724,12 @@ export const SafeSpaceCaseStudyPage = () => {
 
           {/* 02. Wireframes */}
           <div className="mb-14">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">02. Wireframes</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              02. Wireframes
+            </h3>
             <p className="text-lg text-gray-800 leading-relaxed mb-4">
-              Explore the full wireframe set below — switch between Lo-Fi, Hi-Fi, and Web Supplement using the tabs.
+              Explore the full wireframe set below — switch between Lo-Fi,
+              Hi-Fi, and Web Supplement using the tabs.
             </p>
 
             {/* Page tabs */}
