@@ -9,6 +9,36 @@ import { ProjectsPage } from "./pages/ProjectsPage.jsx";
 import { GalleryPage } from "./pages/GalleryPage.jsx";
 import { AboutPage } from "./pages/AboutPage.jsx";
 import { SafeSpaceCaseStudyPage } from "./pages/projects/SafeSpaceCaseStudyPage.jsx";
+import { TwicePostersPage } from "./pages/projects/TwicePostersPage.jsx";
+import { useEffect, useState } from "react";
+import { ArrowUp } from "lucide-react";
+
+function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll to top"
+      className="fixed bottom-8 right-8 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-white/40 backdrop-blur-md border border-white/50 shadow-lg shadow-purple-200/50 text-[#672AAF] transition-all duration-300 hover:bg-white/70 hover:scale-110"
+      style={{
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? "auto" : "none",
+        transform: visible
+          ? "translateY(0) scale(1)"
+          : "translateY(12px) scale(0.9)",
+      }}
+    >
+      <ArrowUp className="w-5 h-5" />
+    </button>
+  );
+}
 
 function App() {
   return (
@@ -29,11 +59,13 @@ function App() {
               path="/projects/safespace"
               element={<SafeSpaceCaseStudyPage />}
             />
+            <Route path="/projects/twice-posters" element={<TwicePostersPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
         <Footer />
+        <ScrollToTopButton />
       </BrowserRouter>
     </div>
   );

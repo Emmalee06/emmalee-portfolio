@@ -43,7 +43,7 @@ const PETALS = [
   { id: 14, v: "Six", left: "51%", scale: 1.3, rot: 16, nudge: -45 },
 
   // ── crown pile top layer ─────────────────────────────────────────
-  { id: 12, v: "Two", left: "48%", scale: 1.12, rot: 30, nudge: -65 },
+  { id: 12, v: "Two", left: "48%", scale: 0.98, rot: 30, nudge: -65 },
   { id: 16, v: "Five", left: "55%", scale: 1.2, rot: 42, nudge: -53 },
 
   // ── small pile petals on top ─────────────────────────────────────
@@ -85,13 +85,12 @@ const FooterPetals = () => {
     gsap.killTweensOf(wrap);
 
     const leftPct = parseFloat(p.left);
-    // side: -1 = far left, 0 = center, 1 = far right
     const side = (leftPct - 50) / 50;
 
     // Sweep strongly sideways based on position
     const flyX =
       side * (180 + Math.random() * 140) + (Math.random() - 0.5) * 40;
-    // Slight downward drift — no upward movement
+    // Slight downward drift
     const driftY = 30 + Math.random() * 50;
     const rotDelta = (side >= 0 ? 1 : -1) * (60 + Math.random() * 80);
 

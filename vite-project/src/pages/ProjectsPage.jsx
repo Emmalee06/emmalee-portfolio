@@ -38,17 +38,18 @@ const allProjects = [
   {
     id: 6,
     title: "TWICE Posters",
-    tags: ["Case Study", "Marketing", "UI/UX"],
-    tagValues: ["case-study", "marketing", "ui-ux"],
-    description: "TWICE Posters is a collection of promotional materials...",
-    image: "/twice_project_cover.png",
-  },
+    tags: ["Creative Design", "Graphic Design"],
+    tagValues: ["creative-design", "graphic-design"],
+    description:
+      "This trio poster series for TWICE features Nayeon, Sana, and Jihyo. Each poster highlighting a distinct mood through bold typography, colour, and composition.",
+    image: "/twice/twice_thumbnail.png",    to: "/projects/twice-posters",  },
 ];
 
 const filterOptions = [
   { label: "Case Study", value: "case-study" },
   { label: "Marketing", value: "marketing" },
   { label: "Graphic Design", value: "graphic-design" },
+  { label: "Creative Design", value: "creative-design" },
   { label: "Product Design", value: "product-design" },
   { label: "UI/UX", value: "ui-ux" },
 ];
