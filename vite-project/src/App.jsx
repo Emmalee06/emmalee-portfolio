@@ -59,7 +59,10 @@ function App() {
               path="/projects/safespace"
               element={<SafeSpaceCaseStudyPage />}
             />
-            <Route path="/projects/twice-posters" element={<TwicePostersPage />} />
+            <Route
+              path="/projects/twice-posters"
+              element={<TwicePostersPage />}
+            />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>

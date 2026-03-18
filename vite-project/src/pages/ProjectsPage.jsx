@@ -42,7 +42,9 @@ const allProjects = [
     tagValues: ["creative-design", "graphic-design"],
     description:
       "This trio poster series for TWICE features Nayeon, Sana, and Jihyo. Each poster highlighting a distinct mood through bold typography, colour, and composition.",
-    image: "/twice/twice_thumbnail.png",    to: "/projects/twice-posters",  },
+    image: "/twice/twice_thumbnail.png",
+    to: "/projects/twice-posters",
+  },
 ];
 
 const filterOptions = [

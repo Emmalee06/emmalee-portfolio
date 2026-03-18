@@ -113,15 +113,14 @@ export const TwicePostersPage = () => {
 
 function ResultsCarousel() {
   const [current, setCurrent] = useState(0);
-  const prev = () => setCurrent((c) => (c - 1 + RESULT_SLIDES.length) % RESULT_SLIDES.length);
+  const prev = () =>
+    setCurrent((c) => (c - 1 + RESULT_SLIDES.length) % RESULT_SLIDES.length);
   const next = () => setCurrent((c) => (c + 1) % RESULT_SLIDES.length);
 
   return (
     <section className="px-4 pb-28">
       <div className="mx-auto w-full max-w-6xl">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-          Results
-        </h2>
+        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Results</h2>
 
         {/* Three poster images side by side */}
         <div className="grid grid-cols-3 gap-4 mb-8">
@@ -138,7 +137,9 @@ function ResultsCarousel() {
                   className="w-full h-full object-cover block"
                 />
               </div>
-              <p className="mt-3 text-base font-medium text-gray-900">{item.name}</p>
+              <p className="mt-3 text-base font-medium text-gray-900">
+                {item.name}
+              </p>
             </div>
           ))}
         </div>

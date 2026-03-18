@@ -223,19 +223,25 @@ export const SafeSpaceCaseStudyPage = () => {
               </div>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="#"
+                  href="https://www.figma.com/proto/MXFOSweojBY1qFrCWJ70dG/UX-UI-MOCKUPS--Copy-?page-id=1510%3A2777&node-id=1897-7435&p=f&viewport=-1563%2C-435%2C0.22&t=59AxJfFezu0sYG63-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1897%3A7435&show-proto-sidebar=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
                 >
                   View Prototype <ArrowRight className="w-3.5 h-3.5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://safe-space.figma.site/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
                 >
                   Blog <ArrowRight className="w-3.5 h-3.5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/safespace__app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
                 >
                   Instagram <ArrowRight className="w-3.5 h-3.5" />
@@ -892,7 +898,9 @@ export const SafeSpaceCaseStudyPage = () => {
                   confidently and safely.
                 </p>
                 <a
-                  href="#"
+                  href="https://www.figma.com/proto/MXFOSweojBY1qFrCWJ70dG/UX-UI-MOCKUPS--Copy-?page-id=1510%3A2777&node-id=1897-7435&p=f&viewport=-1563%2C-435%2C0.22&t=59AxJfFezu0sYG63-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1897%3A7435&show-proto-sidebar=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
                 >
                   View Full Prototype <ArrowRight className="w-3.5 h-3.5" />
