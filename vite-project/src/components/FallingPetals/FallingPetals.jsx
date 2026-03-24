@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+//Punchup part 1
 const PETAL_SVGS = [
   "/petals/petal_varOne.svg",
   "/petals/petal_varTwo.svg",
