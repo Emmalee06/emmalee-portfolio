@@ -68,15 +68,6 @@ export const Footer = () => {
                 Projects
               </a>
               <a
-                href="/gallery"
-                className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
-                onClick={(e) => {
-                  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-                }}
-              >
-                Gallery
-              </a>
-              <a
                 href="/about"
                 className="text-lg font-medium text-gray-800 hover:text-purple-600 transition-colors"
                 onClick={(e) => {

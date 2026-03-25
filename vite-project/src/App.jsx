@@ -6,7 +6,6 @@ import { HomePage } from "./pages/HomePage.jsx";
 import { StarlightSodaPage } from "./pages/projects/StarlightSodaPage.jsx";
 import { MenuDesignPage } from "./pages/projects/MenuDesignPage.jsx";
 import { ProjectsPage } from "./pages/ProjectsPage.jsx";
-import { GalleryPage } from "./pages/GalleryPage.jsx";
 import { AboutPage } from "./pages/AboutPage.jsx";
 import { SafeSpaceCaseStudyPage } from "./pages/projects/SafeSpaceCaseStudyPage.jsx";
 import { TwicePostersPage } from "./pages/projects/TwicePostersPage.jsx";
@@ -68,7 +67,6 @@ function App() {
               path="/projects/travel-magazine"
               element={<TravelMagazinePage />}
             />
-            <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>

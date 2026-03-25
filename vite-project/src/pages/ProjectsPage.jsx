@@ -258,22 +258,7 @@ export const ProjectsPage = () => {
             ))}
           </div>
 
-          {/* More Projects Section */}
-          <div className="text-center py-12">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
-              More Projects to Be Added!
-            </h2>
-            <p className="text-lg text-gray-700 mb-6">
-              Until then, check out my garden of illustrations and graphics:
-            </p>
-            <Link
-              to="/gallery"
-              className="group relative px-8 py-3 rounded-full border border-gray-800 text-gray-800 font-medium text-lg overflow-hidden transition-all duration-300 gradient-animated-btn inline-block"
-            >
-              <span className="relative z-10">My Garden</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-200/70 via-purple-400/70 to-pink-300/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Link>
-          </div>
+
         </div>
       </div>
     </>
