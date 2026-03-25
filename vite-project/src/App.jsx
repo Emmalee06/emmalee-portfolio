@@ -10,6 +10,7 @@ import { GalleryPage } from "./pages/GalleryPage.jsx";
 import { AboutPage } from "./pages/AboutPage.jsx";
 import { SafeSpaceCaseStudyPage } from "./pages/projects/SafeSpaceCaseStudyPage.jsx";
 import { TwicePostersPage } from "./pages/projects/TwicePostersPage.jsx";
+import { TravelMagazinePage } from "./pages/projects/TravelMagazinePage.jsx";
 import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 
@@ -62,6 +63,10 @@ function App() {
             <Route
               path="/projects/twice-posters"
               element={<TwicePostersPage />}
+            />
+            <Route
+              path="/projects/travel-magazine"
+              element={<TravelMagazinePage />}
             />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/about" element={<AboutPage />} />

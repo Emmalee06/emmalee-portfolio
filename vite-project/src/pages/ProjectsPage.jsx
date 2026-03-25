@@ -45,6 +45,16 @@ const allProjects = [
     image: "/twice/twice_thumbnail.png",
     to: "/projects/twice-posters",
   },
+  {
+    id: 7,
+    title: "Travel Magazine",
+    tags: ["Graphic Design"],
+    tagValues: ["graphic-design"],
+    description:
+      "This Scotland travel brochure highlights the country's landscapes, culture, and must-see spots in a visually engaging way.",
+    image: "/travel_magazine/resultFour.png",
+    to: "/projects/travel-magazine",
+  },
 ];
 
 const filterOptions = [
