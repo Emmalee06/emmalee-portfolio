@@ -283,56 +283,68 @@ export const SafeSpaceCaseStudyPage = () => {
 
           {/* Table of Contents */}
           <div className="mb-10">
-            <h2 className="text-3xl font-bold text-[#672AAF] mb-4">
+            <h2 className="text-3xl font-bold text-[#672AAF] mb-2">
               Table of Contents:
             </h2>
+            <p className="text-sm text-gray-500 mb-4 flex items-center gap-1">
+              <ArrowRight className="w-3.5 h-3.5" />
+              Click to jump to section
+            </p>
             <div className="flex flex-wrap gap-2">
               <a
                 href="#background"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Background & Problem
               </a>
               <a
                 href="#solution"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Solution
               </a>
               <a
                 href="#research"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Research & Analysis
               </a>
               <a
                 href="#branding"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Branding
               </a>
               <a
                 href="#design"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Design Journey
               </a>
               <a
                 href="#marketing"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Digital Marketing
               </a>
               <a
                 href="#promo"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Promotional Material
               </a>
               <a
                 href="#wrapup"
-                className="inline-flex items-center rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+                className="inline-flex items-center gap-1.5 rounded-full bg-purple-50 border border-purple-200 px-4 py-2 text-sm font-semibold text-[#672AAF] shadow-sm cursor-pointer transition-all hover:bg-[#672AAF] hover:text-white hover:shadow-md hover:-translate-y-0.5 focus:outline-none active:translate-y-0"
               >
+                <ArrowRight className="w-3.5 h-3.5" />
                 Wrap Up
               </a>
             </div>
@@ -938,7 +950,7 @@ export const SafeSpaceCaseStudyPage = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 01. SafeSpace Instagram
               </h3>
-              <p className="text-lg text-gray-800 leading-relaxed">
+              <p className="text-lg text-gray-800 leading-relaxed mb-4">
                 The SafeSpace Instagram account was designed to extend the brand
                 beyond the app and build an approachable, supportive online
                 presence. By combining informative content with relatable
@@ -947,6 +959,14 @@ export const SafeSpaceCaseStudyPage = () => {
                 SafeSpace while creating a trusted space where users can
                 connect, learn, and feel supported.
               </p>
+              <a
+                href="https://www.instagram.com/safespace__app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Instagram <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
 
             {/* 02. SafeSpace Blog */}
@@ -961,7 +981,7 @@ export const SafeSpaceCaseStudyPage = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-3">
                 02. SafeSpace Blog
               </h3>
-              <p className="text-lg text-gray-800 leading-relaxed">
+              <p className="text-lg text-gray-800 leading-relaxed mb-4">
                 The SafeSpace blog was created to deliver in-depth, informative
                 content that supports users beyond the core platform. It focuses
                 on informing people about SafeSpace&apos;s core features, its
@@ -971,6 +991,14 @@ export const SafeSpaceCaseStudyPage = () => {
                 as a trusted resource that adds value to the overall SafeSpace
                 experience.
               </p>
+              <a
+                href="https://safe-space.figma.site/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-purple-100 hover:border-purple-300 focus:outline-none"
+              >
+                Blog <ArrowRight className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>
