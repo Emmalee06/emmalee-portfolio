@@ -14,37 +14,6 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div className="space-y-6">
             <img src="/logo_footer.png" alt="ED Logo" className="h-12 w-auto" />
-
-            <p className="text-gray-800 text-base max-w-sm leading-relaxed">
-              You can also connect with me through these links:
-            </p>
-
-            <div className="flex items-center gap-4">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-800 transition-colors"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-800 transition-colors"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-600 hover:text-purple-800 transition-colors"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-            </div>
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-10">

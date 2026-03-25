@@ -257,8 +257,6 @@ export const ProjectsPage = () => {
               <ProjectGridCard key={project.id} project={project} />
             ))}
           </div>
-
-
         </div>
       </div>
     </>
