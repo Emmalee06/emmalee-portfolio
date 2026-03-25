@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 //punch up part 2
 
-const H = {
+const Height = {
   One: 71,
   Two: 77,
   Three: 61,
@@ -20,7 +20,7 @@ const arcY = (x) => {
 };
 
 const offset = (variant, scale) =>
-  Math.round((H[variant] * (1 - scale)) / 2) - 12;
+  Math.round((Height[variant] * (1 - scale)) / 2) - 12;
 
 const PETALS = [
   // ── far left ────────────────────────────────────────────────────
