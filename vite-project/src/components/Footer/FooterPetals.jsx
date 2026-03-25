@@ -1,6 +1,8 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
+//punch up part 2
+
 const H = {
   One: 71,
   Two: 77,
